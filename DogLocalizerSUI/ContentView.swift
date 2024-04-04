@@ -13,24 +13,48 @@ struct ContentView: View {
                 Color("backgroundColor")
                     .edgesIgnoringSafeArea(.all)
             VStack {
-                Image(systemName: "camera")
-                    .imageScale(.large)
-                    .foregroundColor(.accentColor)
-                    .padding()
-                
-                HStack {
-                    Text("Hello, world!")
-                        .fontWeight(.black)
-                        .foregroundColor(Color("titleColor"))
-                        .multilineTextAlignment(.center)
+                ZStack{
+                    Image(systemName:"dog.fill")
+                        .foregroundColor(.white)
                         .padding()
-                    Text("Dana")
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color("headingColor")) // Set text color
-                        .multilineTextAlignment(.center)
+                    Image(systemName:"dog")
+                        .foregroundColor(.accentColor)
                         .padding()
                 }
+                Text("Welcome to my dog localization project!")
+                    .font(.title2)
+                    .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
+                    .foregroundColor(Color("titleColor"))
+                    .multilineTextAlignment(.center)
+                ZStack{
+                    Image(systemName: "camera.fill")
+                        .imageScale(.large)
+                        .foregroundColor(.white)
+                        .padding()
+                    
+                    Image(systemName: "camera")
+                        .imageScale(.large)
+                        .foregroundColor(.accentColor)
+                        .padding()
+                }
+                HStack {
+                    Text("Rating:")
+                        .fontWeight(.black)
+                        .multilineTextAlignment(.center)
+                    Image(systemName:"star.fill")
+                    Image(systemName:"star.fill")
+                    Image(systemName:"star.fill")
+                    Image(systemName:"star.fill")
+                    Image(systemName:"star.leadinghalf.filled")
+                }
+                .foregroundColor(.accentColor)
+                .padding(10)
+                .background(Rectangle()
+                    .foregroundColor(.white)
+                    .cornerRadius(10))
+                .font(.caption)
+                
+                Spacer()
             }
         }
     }
