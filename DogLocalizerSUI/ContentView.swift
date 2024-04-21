@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @State private var showingImagePicker = false
+    @State private var image: UIImage?
     @State private var imageName:String = "star";
     
     var body: some View {
@@ -22,6 +24,19 @@ struct ContentView: View {
                 }, label: {
                     Image(systemName: imageName)
                 })
+            
+            image.map {
+                            Image(uiImage: $0)
+                                .resizable()
+                                .scaledToFit()
+                        }
+
+                        Button("Take Photo") {
+                            showingImagePicker = true
+                        }
+                        .sheet(isPresented: $showingImagePicker) {
+                            ImagePicker(image: $image)
+                        }
         }
         .padding()
         
