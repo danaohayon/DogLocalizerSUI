@@ -14,6 +14,8 @@
 		371F1B932BBAA40700930363 /* DogLocalizerSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F1B922BBAA40700930363 /* DogLocalizerSUITests.swift */; };
 		371F1B9D2BBAA40700930363 /* DogLocalizerSUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F1B9C2BBAA40700930363 /* DogLocalizerSUIUITests.swift */; };
 		371F1B9F2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F1B9E2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift */; };
+		3742D7AA2BD53BFA00CD7F31 /* StarToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742D7A92BD53BFA00CD7F31 /* StarToggleButton.swift */; };
+		3742D7AC2BD53E9400CD7F31 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742D7AB2BD53E9400CD7F31 /* StarRatingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		371F1B982BBAA40700930363 /* DogLocalizerSUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogLocalizerSUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		371F1B9C2BBAA40700930363 /* DogLocalizerSUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogLocalizerSUIUITests.swift; sourceTree = "<group>"; };
 		371F1B9E2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogLocalizerSUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3742D7A92BD53BFA00CD7F31 /* StarToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarToggleButton.swift; sourceTree = "<group>"; };
+		3742D7AB2BD53E9400CD7F31 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,8 @@
 		371F1B802BBAA3FE00930363 /* DogLocalizerSUI */ = {
 			isa = PBXGroup;
 			children = (
+				3742D7A92BD53BFA00CD7F31 /* StarToggleButton.swift */,
+				3742D7AB2BD53E9400CD7F31 /* StarRatingView.swift */,
 				371F1B812BBAA3FE00930363 /* DogLocalizerSUIApp.swift */,
 				371F1B832BBAA3FE00930363 /* ContentView.swift */,
 				371F1B852BBAA40500930363 /* Assets.xcassets */,
@@ -258,7 +264,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				371F1B842BBAA3FE00930363 /* ContentView.swift in Sources */,
+				3742D7AC2BD53E9400CD7F31 /* StarRatingView.swift in Sources */,
 				371F1B822BBAA3FE00930363 /* DogLocalizerSUIApp.swift in Sources */,
+				3742D7AA2BD53BFA00CD7F31 /* StarToggleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,11 +41,7 @@ struct ContentView: View {
                     Text("Rating:")
                         .fontWeight(.black)
                         .multilineTextAlignment(.center)
-                    Image(systemName:"star.fill")
-                    Image(systemName:"star.fill")
-                    Image(systemName:"star.fill")
-                    Image(systemName:"star.fill")
-                    Image(systemName:"star.leadinghalf.filled")
+                    StarRatingView()
                 }
                 .foregroundColor(.accentColor)
                 .padding(10)
@@ -55,6 +51,8 @@ struct ContentView: View {
                 .font(.caption)
                 
                 Spacer()
+                
+                
             }
         }
     }
