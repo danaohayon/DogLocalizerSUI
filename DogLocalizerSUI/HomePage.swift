@@ -2,16 +2,22 @@ import SwiftUI
 
 struct HomePage: View {
     
-    let trebuchetMS: Font = Font.custom("TrebuchetMS", size: 16)
-    
+    @State private var isMenuOpen = false
+
     var body: some View {
         ZStack(alignment: .top) {
 
             Color("panelColor")
-                .edgesIgnoringSafeArea(.all)
-            
+                .edgesIgnoringSafeArea(.all)            
             HStack {
-                Image(systemName: "line.3.horizontal")
+                Button(action: {
+                    withAnimation {
+                        isMenuOpen.toggle()
+                    }
+                }) {
+                    Image(systemName: "line.3.horizontal")
+                }
+
                 Spacer()
                 Text("Made by Dana Ohayon")
                     .font(.custom("TrebuchetMS", size: 10))
@@ -97,6 +103,12 @@ struct HomePage: View {
                  .padding(.top, 10)
                 
             }.offset(y: 25)
+            
+            if isMenuOpen {
+                            SideMenu(isMenuOpen: $isMenuOpen)
+                                .transition(.move(edge: .leading))  // Smooth transition for the menu
+                        }
+            
         }
     }
 }
