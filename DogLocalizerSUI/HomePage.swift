@@ -14,6 +14,7 @@ struct HomePage: View {
                 Button(action: {
                     withAnimation {
                         isMenuOpen.toggle()
+                        if isAboutOpen {isAboutOpen = false}
                     }
                 }) {
                     Image(systemName: "line.3.horizontal")
@@ -28,6 +29,7 @@ struct HomePage: View {
                 Button(action: {
                     withAnimation {
                         isAboutOpen.toggle()
+                        if isMenuOpen {isMenuOpen = false}
                     }
                 }) {
                     Image(systemName: "questionmark.circle")
