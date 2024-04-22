@@ -3,6 +3,7 @@ import SwiftUI
 struct HomePage: View {
     
     @State private var isMenuOpen = false
+    @State private var isAboutOpen = false
 
     var body: some View {
         ZStack(alignment: .top) {
@@ -24,7 +25,14 @@ struct HomePage: View {
                     .padding(.vertical, 5)
                     .foregroundColor(Color("AccentColor").opacity(0.7))
                 Spacer()
-                Image(systemName: "questionmark.circle")
+                Button(action: {
+                    withAnimation {
+                        isAboutOpen.toggle()
+                    }
+                }) {
+                    Image(systemName: "questionmark.circle")
+                }
+
             }.padding(.horizontal, 35)
                 .foregroundColor(Color("AccentColor"))
                 .fontWeight(.bold)
@@ -105,9 +113,13 @@ struct HomePage: View {
             }.offset(y: 25)
             
             if isMenuOpen {
-                            SideMenu(isMenuOpen: $isMenuOpen)
-                                .transition(.move(edge: .leading))  // Smooth transition for the menu
-                        }
+                SideMenu(isMenuOpen: $isMenuOpen)
+                    .transition(.move(edge: .leading))  // Smooth transition for the menu
+                }
+            if isAboutOpen {
+                About(isAboutOpen: $isAboutOpen)
+                        .transition(.move(edge: .bottom))  // Smooth transition for the about the project section
+                }
             
         }
     }
