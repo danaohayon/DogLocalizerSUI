@@ -15,6 +15,8 @@
 		371F1B9D2BBAA40700930363 /* DogLocalizerSUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F1B9C2BBAA40700930363 /* DogLocalizerSUIUITests.swift */; };
 		371F1B9F2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F1B9E2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift */; };
 		373B80992BD597020020137A /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373B80982BD597020020137A /* PhotoPicker.swift */; };
+		379CEA482BDAABB500285DC0 /* finalModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 379CEA472BDAABB000285DC0 /* finalModel.mlpackage */; };
+		379CEA4C2BDAAD5700285DC0 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CEA4B2BDAAD5700285DC0 /* ModelManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		371F1B9C2BBAA40700930363 /* DogLocalizerSUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogLocalizerSUIUITests.swift; sourceTree = "<group>"; };
 		371F1B9E2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogLocalizerSUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		373B80982BD597020020137A /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
+		379CEA472BDAABB000285DC0 /* finalModel.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = finalModel.mlpackage; sourceTree = "<group>"; };
+		379CEA4B2BDAAD5700285DC0 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +102,9 @@
 			children = (
 				371F1B812BBAA3FE00930363 /* DogLocalizerSUIApp.swift */,
 				371F1B832BBAA3FE00930363 /* ContentView.swift */,
+				379CEA4B2BDAAD5700285DC0 /* ModelManager.swift */,
 				373B80982BD597020020137A /* PhotoPicker.swift */,
+				379CEA472BDAABB000285DC0 /* finalModel.mlpackage */,
 				371F1B852BBAA40500930363 /* Assets.xcassets */,
 				371F1B872BBAA40500930363 /* Preview Content */,
 			);
@@ -262,6 +268,8 @@
 			files = (
 				371F1B842BBAA3FE00930363 /* ContentView.swift in Sources */,
 				371F1B822BBAA3FE00930363 /* DogLocalizerSUIApp.swift in Sources */,
+				379CEA4C2BDAAD5700285DC0 /* ModelManager.swift in Sources */,
+				379CEA482BDAABB500285DC0 /* finalModel.mlpackage in Sources */,
 				373B80992BD597020020137A /* PhotoPicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
