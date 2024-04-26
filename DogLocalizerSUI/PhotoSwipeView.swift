@@ -26,8 +26,8 @@ struct CustomPageIndicatorView: View {
 struct PhotoSwipeView: View {
     let photos: [Photo] = [
         Photo(imageName: "photo1", description: "A photo of a dog from the Stanford Dogs dataset"),
-        Photo(imageName: "photo2", description: "That same photo, resized to fit the model requirements"),
-        Photo(imageName: "photo3", description: "The resized photo with the REAL bounding box"),
+        Photo(imageName: "photo2", description: "The original photo with the REAL bounding box"),
+        Photo(imageName: "photo3", description: "That same photo, resized to fit the model requirements"),
         Photo(imageName: "photo4", description: "The photo with the REAL and PREDICTED \nbounding box and classification")
     ]
     @State private var selectedIndex = 0
@@ -39,7 +39,7 @@ struct PhotoSwipeView: View {
                     VStack {
                         Image(photos[index].imageName)
                             .resizable()
-                            .scaledToFill()
+                            .scaledToFit()
                         Text(photos[index].description)
                             .multilineTextAlignment(.center)
                             .padding(.top, 5)

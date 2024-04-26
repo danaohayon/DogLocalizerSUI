@@ -9,11 +9,11 @@ struct About: View {
                 Color("panelColor")
                     .edgesIgnoringSafeArea(.bottom)
                     .frame(width: 350, height: 770)
-                    .cornerRadius(15)
+                    .cornerRadius(25)
                 Color(.brown.opacity(0.1))
                     .edgesIgnoringSafeArea(.bottom)
                     .frame(width: 350, height: 770)
-                    .cornerRadius(15)
+                    .cornerRadius(25)
                 ScrollView {
                 VStack(alignment: .center) {
                     
@@ -36,10 +36,37 @@ struct About: View {
                         .fontWeight(.bold)
                         .padding(.bottom)
                     
-                    Text("When you input a photo into the app it undergoes a few steps: \n 1. It gets resized to a 224x224 image, to fit my model's requirements. \n 2. It is passed through the model on Inference mode, to return a prediction. \n 3. The prediction is then transformed into a breed and a bounding box. \n 4. The photo is resized back with the bounding box resized accordingly.")
+                    Text("When you input a photo into the app it undergoes a few steps:")
                         .font(.custom("TrebuchetMS", size: 13))
                         .lineSpacing(10.0)
-                        .padding(.bottom)
+                    
+                    Image("photo1")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.all)
+                    
+                    Text("1. It gets resized to a 224x224 image, to fit my model's requirements.")
+                        .font(.custom("TrebuchetMS", size: 13))
+                        .lineSpacing(10.0)
+                    
+                    Image("photo3")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.all)
+                    
+                    Text("2. It is passed through the model on Inference mode, to return a prediction. \n 3. The prediction is then transformed into a breed and a bounding box.")
+                        .font(.custom("TrebuchetMS", size: 13))
+                        .lineSpacing(10.0)
+                        .padding(.horizontal, 10)
+                    
+//                    Text ("3. The prediction is then transformed into a breed and a bounding box.")
+//                        .font(.custom("TrebuchetMS", size: 13))
+//                        .lineSpacing(10.0)
+                    
+                    Image("photo4")
+                        .resizable()
+                        .scaledToFit()
+                        .padding(.all)
                     
                     Spacer()
                 }.offset(y: 20)
