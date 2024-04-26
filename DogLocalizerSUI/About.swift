@@ -1,25 +1,52 @@
 import SwiftUI
 struct About: View {
     
-    @Binding var isAboutOpen: Bool
-    
+    @EnvironmentObject var navigationManager: NavigationManager
+
     var body: some View {
         
             ZStack(alignment: .center){
                 Color("panelColor")
-                    .edgesIgnoringSafeArea(.bottom)
-                    .frame(width: 350, height: 770)
-                    .cornerRadius(25)
+                    .edgesIgnoringSafeArea(.all)
                 Color(.brown.opacity(0.1))
-                    .edgesIgnoringSafeArea(.bottom)
-                    .frame(width: 350, height: 770)
-                    .cornerRadius(25)
-                ScrollView {
+                    .edgesIgnoringSafeArea(.all)
+                
+                
                 VStack(alignment: .center) {
+                    HStack(alignment: .top){
+                        Button(action: {
+                            withAnimation {
+                                navigationManager.isSideMenuOpen = true
+                            }
+                        }) {
+                            Image(systemName: "line.3.horizontal")
+                        }
+                        
+                        Spacer()
+                        Text("Made by Dana Ohayon")
+                            .font(.custom("TrebuchetMS", size: 10))
+                            .padding(.vertical, 5)
+                            .foregroundColor(Color("AccentColor").opacity(0.7))
+                        Spacer()
+                        Button(action: {
+                            withAnimation {
+                                navigationManager.currentPage = "about"
+                            }
+                        }) {
+                            Image(systemName: "questionmark.circle")
+                        }
+                        
+                    }.padding(.horizontal, 35)
+                        .foregroundColor(Color("AccentColor"))
+                        .fontWeight(.bold)
+                        .font(.system(size: 18))
+                        .padding(.top)
                     
+                    ScrollView {
                     Text("About My Project")
                         .font(.custom("TrebuchetMS", size: 20))
                         .fontWeight(.bold)
+                        .padding(.top)
                     
                     Rectangle()
                         .frame(width: 200, height: 1)
@@ -73,29 +100,19 @@ struct About: View {
                     .frame(width: 300)
                     .foregroundColor(Color("AccentColor"))
                     .padding(.horizontal)
-                
-                    Button(action: {
-                        withAnimation {
-                            isAboutOpen = false
-                        }
-                    }) {
-                        HStack{
-                            Image(systemName:"xmark")
-                                .foregroundColor(Color("AccentColor"))
-                                .fontWeight(.bold)
-                                .font(.system(size: 16))
-                                .offset(y: 2)
-                            Text("close")
-                                .font(.custom("TrebuchetMS", size: 18))
-                                .fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                        }
-                
-                }.offset(y: 330)
               
             }
         
-        }.offset(y: 40)
+        }
 
     }
 
+}
+
+
+struct About_Previews: PreviewProvider {
+    static var previews: some View {
+        About()
+            .environmentObject(NavigationManager())
+    }
 }

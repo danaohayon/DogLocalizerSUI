@@ -1,24 +1,22 @@
 import SwiftUI
 
 struct HomePage: View {
-    
-    @State private var isMenuOpen = false
-    @State private var isAboutOpen = false
     @State private var image: UIImage?
     @State private var isImagePickerDisplayed = false
     @State private var showPhotoViewer = false
+    @EnvironmentObject var navigationManager: NavigationManager
     
     var body: some View {
         NavigationView {
             ZStack(alignment: .top) {
-                
+
                 Color("panelColor")
                     .edgesIgnoringSafeArea(.all)
                 HStack {
                     Button(action: {
                         withAnimation {
-                            isMenuOpen.toggle()
-                            if isAboutOpen {isAboutOpen = false}
+                            print("Opening side menu")
+                            navigationManager.isSideMenuOpen = true
                         }
                     }) {
                         Image(systemName: "line.3.horizontal")
@@ -30,12 +28,10 @@ struct HomePage: View {
                         .padding(.vertical, 5)
                         .foregroundColor(Color("AccentColor").opacity(0.7))
                     Spacer()
-                    Button(action: {
-                        withAnimation {
-                            isAboutOpen.toggle()
-                            if isMenuOpen {isMenuOpen = false}
-                        }
-                    }) {
+                    Button{
+                            print("Navigating to about page")
+                            navigationManager.currentPage = "about"
+                    } label: {
                         Image(systemName: "questionmark.circle")
                     }
                     
@@ -136,15 +132,6 @@ struct HomePage: View {
                     }
                 }.offset(y: 25)
                 
-                if isMenuOpen {
-                    SideMenu(isMenuOpen: $isMenuOpen)
-                        .transition(.move(edge: .leading))  // Smooth transition for the menu
-                }
-                if isAboutOpen {
-                    About(isAboutOpen: $isAboutOpen)
-                        .transition(.move(edge: .bottom))  // Smooth transition for the about the project section
-                }
-                
                 
             }.fullScreenCover(isPresented: $showPhotoViewer) {
                 if let image = image {
@@ -163,5 +150,6 @@ struct HomePage: View {
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
         HomePage()
+            .environmentObject(NavigationManager())
     }
 }

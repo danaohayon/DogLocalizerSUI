@@ -1,7 +1,8 @@
 import SwiftUI
 struct SideMenu: View {
     
-    @Binding var isMenuOpen: Bool
+//    @Binding var isMenuOpen: Bool
+    @EnvironmentObject var navigationManager: NavigationManager
     
     var body: some View {
         ZStack(alignment: .leading){
@@ -34,16 +35,19 @@ struct SideMenu: View {
                     .frame(height: 1)
                     .foregroundColor(Color("AccentColor"))
                     .padding(.top, 5)
-                
-                HStack{
-                    Image(systemName: "house")
-                        .font(.system( size: 16))
-                        .fontWeight(.regular)
-                        .foregroundColor(Color("AccentColor"))
-                    Text("Home")
-                        .font(.custom("TrebuchetMS", size: 16))
-                }.padding(.vertical)
-                
+                Button{
+                    navigationManager.currentPage = "home"
+                    navigationManager.isSideMenuOpen = false
+                } label: {
+                    HStack{
+                        Image(systemName: "house")
+                            .font(.system( size: 16))
+                            .fontWeight(.regular)
+                            .foregroundColor(Color("AccentColor"))
+                        Text("Home")
+                            .font(.custom("TrebuchetMS", size: 16))
+                    }.padding(.vertical)
+                }
                 HStack{
                     Image(systemName: "rectangle.stack")
                         .font(.system( size: 16))
@@ -61,16 +65,19 @@ struct SideMenu: View {
                     Text("Settings")
                         .font(.custom("TrebuchetMS", size: 16))
                 }.padding(.bottom)
-                
-                HStack{
-                    Image(systemName: "questionmark.circle")
-                        .font(.system( size: 16))
-                        .fontWeight(.regular)
-                        .foregroundColor(Color("AccentColor"))
-                    Text("Help")
-                        .font(.custom("TrebuchetMS", size: 16))
-                }.padding(.bottom)
-                
+                Button{
+                    navigationManager.currentPage = "about"
+                    navigationManager.isSideMenuOpen = false
+                } label: {
+                    HStack{
+                        Image(systemName: "questionmark.circle")
+                            .font(.system( size: 16))
+                            .fontWeight(.regular)
+                            .foregroundColor(Color("AccentColor"))
+                        Text("About")
+                            .font(.custom("TrebuchetMS", size: 16))
+                    }.padding(.bottom)
+                }
                 Spacer()
             }.offset(y: 20)
             .frame(width: 300)
@@ -78,9 +85,7 @@ struct SideMenu: View {
             .padding(.horizontal)
             
             Button(action: {
-                            withAnimation {
-                                isMenuOpen = false
-                            }
+                navigationManager.isSideMenuOpen = false
                         }) {
                             HStack{
                                 Image(systemName:"xmark")

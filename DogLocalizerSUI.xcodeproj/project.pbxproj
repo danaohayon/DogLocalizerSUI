@@ -13,12 +13,16 @@
 		371F1B932BBAA40700930363 /* DogLocalizerSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F1B922BBAA40700930363 /* DogLocalizerSUITests.swift */; };
 		371F1B9D2BBAA40700930363 /* DogLocalizerSUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F1B9C2BBAA40700930363 /* DogLocalizerSUIUITests.swift */; };
 		371F1B9F2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F1B9E2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift */; };
+		372E126D2BDC0CB700B6CFB8 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E126C2BDC0CB700B6CFB8 /* NavigationManager.swift */; };
+		372E126F2BDC328E00B6CFB8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E126E2BDC328E00B6CFB8 /* RootView.swift */; };
+		372E12712BDC44FA00B6CFB8 /* finalModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 372E12702BDC44FA00B6CFB8 /* finalModel.mlpackage */; };
 		373B809B2BD5A48E0020137A /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373B809A2BD5A48D0020137A /* SideMenu.swift */; };
 		373B809D2BD6430C0020137A /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373B809C2BD6430C0020137A /* About.swift */; };
 		3742D7AA2BD53BFA00CD7F31 /* StarToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742D7A92BD53BFA00CD7F31 /* StarToggleButton.swift */; };
 		3742D7AC2BD53E9400CD7F31 /* StarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742D7AB2BD53E9400CD7F31 /* StarRatingView.swift */; };
 		3742D7AE2BD540B900CD7F31 /* HomePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742D7AD2BD540B900CD7F31 /* HomePage.swift */; };
 		3742D7B82BD57BE200CD7F31 /* PhotoSwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742D7B72BD57BE200CD7F31 /* PhotoSwipeView.swift */; };
+		377144282BDC489D00CF71C0 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377144272BDC489D00CF71C0 /* ModelManager.swift */; };
 		379CEA4E2BDBE9F500285DC0 /* PhotoViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CEA4D2BDBE9F500285DC0 /* PhotoViewerView.swift */; };
 		379CEA502BDBEBBD00285DC0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CEA4F2BDBEBBD00285DC0 /* ImagePicker.swift */; };
 /* End PBXBuildFile section */
@@ -50,12 +54,16 @@
 		371F1B982BBAA40700930363 /* DogLocalizerSUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DogLocalizerSUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		371F1B9C2BBAA40700930363 /* DogLocalizerSUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogLocalizerSUIUITests.swift; sourceTree = "<group>"; };
 		371F1B9E2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogLocalizerSUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		372E126C2BDC0CB700B6CFB8 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
+		372E126E2BDC328E00B6CFB8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		372E12702BDC44FA00B6CFB8 /* finalModel.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = finalModel.mlpackage; sourceTree = "<group>"; };
 		373B809A2BD5A48D0020137A /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		373B809C2BD6430C0020137A /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		3742D7A92BD53BFA00CD7F31 /* StarToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarToggleButton.swift; sourceTree = "<group>"; };
 		3742D7AB2BD53E9400CD7F31 /* StarRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRatingView.swift; sourceTree = "<group>"; };
 		3742D7AD2BD540B900CD7F31 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; tabWidth = 4; };
 		3742D7B72BD57BE200CD7F31 /* PhotoSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSwipeView.swift; sourceTree = "<group>"; };
+		377144272BDC489D00CF71C0 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
 		379CEA4D2BDBE9F500285DC0 /* PhotoViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerView.swift; sourceTree = "<group>"; };
 		379CEA4F2BDBEBBD00285DC0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,15 +116,19 @@
 		371F1B802BBAA3FE00930363 /* DogLocalizerSUI */ = {
 			isa = PBXGroup;
 			children = (
-				3742D7A92BD53BFA00CD7F31 /* StarToggleButton.swift */,
-				3742D7AB2BD53E9400CD7F31 /* StarRatingView.swift */,
 				371F1B812BBAA3FE00930363 /* DogLocalizerSUIApp.swift */,
+				3742D7AD2BD540B900CD7F31 /* HomePage.swift */,
 				373B809C2BD6430C0020137A /* About.swift */,
 				373B809A2BD5A48D0020137A /* SideMenu.swift */,
 				379CEA4F2BDBEBBD00285DC0 /* ImagePicker.swift */,
 				379CEA4D2BDBE9F500285DC0 /* PhotoViewerView.swift */,
-				3742D7AD2BD540B900CD7F31 /* HomePage.swift */,
+				372E126C2BDC0CB700B6CFB8 /* NavigationManager.swift */,
+				377144272BDC489D00CF71C0 /* ModelManager.swift */,
+				372E126E2BDC328E00B6CFB8 /* RootView.swift */,
 				3742D7B72BD57BE200CD7F31 /* PhotoSwipeView.swift */,
+				3742D7AB2BD53E9400CD7F31 /* StarRatingView.swift */,
+				3742D7A92BD53BFA00CD7F31 /* StarToggleButton.swift */,
+				372E12702BDC44FA00B6CFB8 /* finalModel.mlpackage */,
 				371F1B852BBAA40500930363 /* Assets.xcassets */,
 				371F1B872BBAA40500930363 /* Preview Content */,
 			);
@@ -286,7 +298,11 @@
 				371F1B822BBAA3FE00930363 /* DogLocalizerSUIApp.swift in Sources */,
 				3742D7AA2BD53BFA00CD7F31 /* StarToggleButton.swift in Sources */,
 				3742D7B82BD57BE200CD7F31 /* PhotoSwipeView.swift in Sources */,
+				377144282BDC489D00CF71C0 /* ModelManager.swift in Sources */,
 				379CEA4E2BDBE9F500285DC0 /* PhotoViewerView.swift in Sources */,
+				372E126D2BDC0CB700B6CFB8 /* NavigationManager.swift in Sources */,
+				372E12712BDC44FA00B6CFB8 /* finalModel.mlpackage in Sources */,
+				372E126F2BDC328E00B6CFB8 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
