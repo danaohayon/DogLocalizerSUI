@@ -2,20 +2,24 @@ import SwiftUI
 
 struct PhotoViewerView: View {
     @Binding var image: UIImage?
-    @State private var isMenuOpen = false
-    @State private var isAboutOpen = false
     var chooseNewPhoto: () -> Void
+    @State private var classificationLabel: String = ""
+    @State private var boundingBox: CGRect?
+    @EnvironmentObject var navigationManager: NavigationManager
+    @State private var processedImage: UIImage?
+
 
     var body: some View {
         ZStack(alignment: .top){
             Color("panelColor")
                 .edgesIgnoringSafeArea(.all)
+            
+            
             VStack {
                 HStack {
                     Button(action: {
                         withAnimation {
-                            isMenuOpen.toggle()
-                            if isAboutOpen {isAboutOpen = false}
+                            navigationManager.isSideMenuOpen = true
                         }
                     }) {
                         Image(systemName: "line.3.horizontal")
@@ -29,8 +33,7 @@ struct PhotoViewerView: View {
                     Spacer()
                     Button(action: {
                         withAnimation {
-                            isAboutOpen.toggle()
-                            if isMenuOpen {isMenuOpen = false}
+                            navigationManager.currentPage = "about"
                         }
                     }) {
                         Image(systemName: "questionmark.circle")
@@ -42,19 +45,53 @@ struct PhotoViewerView: View {
                     .font(.system(size: 18))
                     .padding(.top)
                 
-                
                 if let image = image {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
-                    Text("Classify photo")
-                        .font(.title)
+                        .padding(.vertical)
+                        .overlay(RectangleOverlay(boundingBox: boundingBox))
+                }
+                if let image = processedImage {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
                         .padding()
+                }
+               
+                    Button {
+                        if let image = self.image {
+                            let manager = ModelManager()
+                            if let processed = manager?.preprocessImage(image) {
+                                self.processedImage = processed // Now you can visually inspect the processed image
+                                manager?.classifyImage(processed) { label, box in
+                                    self.classificationLabel = label
+                                    self.boundingBox = box
+                                }
+                            }
+                        }
+                    } label: {
+                        HStack{
+                            Text("Classify Image")
+                                .font(.custom("TrebuchetMS", size: 26))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color("AccentColor"))
+                                .padding(.leading, 1)
+                            
+                        }.padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .background(Color("backgroundColor").opacity(0.3))
+                            .cornerRadius(20)
+                            .padding(.top, 10)
+                    }
+                    
+                    Text(classificationLabel)
+                    
                     Button {
                         chooseNewPhoto()
                     } label: {
                         HStack{
-                            Image(systemName: "square.and.arrow.up")
+                            Image(systemName: "arrow.counterclockwise")
                                 .foregroundColor(.accentColor)
                                 .font(.system(size:13))
                                 .padding(.bottom, 2)
@@ -75,13 +112,24 @@ struct PhotoViewerView: View {
             }
             .padding()
         }
-        if isMenuOpen {
-            SideMenu(isMenuOpen: $isMenuOpen)
-                .transition(.move(edge: .leading))  // Smooth transition for the menu
-        }
-        if isAboutOpen {
-            About(isAboutOpen: $isAboutOpen)
-                .transition(.move(edge: .bottom))  // Smooth transition for the about the project section
+    }
+
+
+struct RectangleOverlay: View {
+    var boundingBox: CGRect?
+
+    var body: some View {
+        GeometryReader { geometry in
+            if let boundingBox = boundingBox {
+                Rectangle()
+                    .path(in: CGRect(
+                        x: boundingBox.origin.x * geometry.size.width,
+                        y: boundingBox.origin.y * geometry.size.height,
+                        width: boundingBox.size.width * geometry.size.width,
+                        height: boundingBox.size.height * geometry.size.height))
+                    .stroke(Color.red, lineWidth: 3)
+            }
         }
     }
 }
+
