@@ -64,6 +64,7 @@
 		3742D7AD2BD540B900CD7F31 /* HomePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePage.swift; sourceTree = "<group>"; tabWidth = 4; };
 		3742D7B72BD57BE200CD7F31 /* PhotoSwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoSwipeView.swift; sourceTree = "<group>"; };
 		377144272BDC489D00CF71C0 /* ModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelManager.swift; sourceTree = "<group>"; };
+		3796BAC62BEF8825000FEE99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		379CEA4D2BDBE9F500285DC0 /* PhotoViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerView.swift; sourceTree = "<group>"; };
 		379CEA4F2BDBEBBD00285DC0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +117,7 @@
 		371F1B802BBAA3FE00930363 /* DogLocalizerSUI */ = {
 			isa = PBXGroup;
 			children = (
+				3796BAC62BEF8825000FEE99 /* Info.plist */,
 				371F1B812BBAA3FE00930363 /* DogLocalizerSUIApp.swift */,
 				3742D7AD2BD540B900CD7F31 /* HomePage.swift */,
 				373B809C2BD6430C0020137A /* About.swift */,
@@ -469,6 +471,8 @@
 				DEVELOPMENT_TEAM = R22SH957AH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DogLocalizerSUI/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -498,6 +502,8 @@
 				DEVELOPMENT_TEAM = R22SH957AH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DogLocalizerSUI/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -564,6 +570,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R22SH957AH;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to access your camera";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danaohayon.DogLocalizerSUIUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -582,6 +589,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R22SH957AH;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app needs to access your camera";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.danaohayon.DogLocalizerSUIUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

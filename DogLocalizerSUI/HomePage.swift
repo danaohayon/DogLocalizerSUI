@@ -3,6 +3,7 @@ import SwiftUI
 struct HomePage: View {
     @State private var image: UIImage?
     @State private var isImagePickerDisplayed = false
+    @State private var sourceType: UIImagePickerController.SourceType = .photoLibrary // Default source type
     @State private var showPhotoViewer = false
     @EnvironmentObject var navigationManager: NavigationManager
     
@@ -29,7 +30,7 @@ struct HomePage: View {
                         .foregroundColor(Color("AccentColor").opacity(0.7))
                     Spacer()
                     Button{
-                            print("Navigating to about page")
+//                            print("Navigating to about page")
                             navigationManager.currentPage = "about"
                     } label: {
                         Image(systemName: "questionmark.circle")
@@ -75,53 +76,63 @@ struct HomePage: View {
                             .multilineTextAlignment(.center)
                             .padding(.horizontal, 40)
                     }
-                    
-                    HStack{
-                        Image(systemName: "camera")
-                            .foregroundColor(.accentColor)
-                            .font(.system(size:18))
-                            .padding(.bottom, 2)
-                        
-                        Text("Take photo")
-                            .font(.custom("TrebuchetMS", size: 18))
-                            .fontWeight(.bold)
-                            .foregroundColor(Color("AccentColor"))
-                            .padding(.leading, 5)
-                        
-                    }.padding(.horizontal, 20)
-                        .padding(.vertical, 10)
-                        .background(Color("backgroundColor").opacity(0.3))
-                        .cornerRadius(20)
-                        .padding(.top, 40)
-                        .padding(.bottom, 3)
-                    
-                    if let image = image {
-                        PhotoViewerView(image: $image, chooseNewPhoto: {
-                            isImagePickerDisplayed = true
-                        })
-                    } else {
-                        Button {
-                            isImagePickerDisplayed = true
-                        } label: {
-                            HStack{
-                                Image(systemName: "square.and.arrow.up")
-                                    .foregroundColor(.accentColor)
-                                    .font(.system(size:17))
-                                    .padding(.bottom, 2)
-                                
-                                Text("Choose photo")
-                                    .font(.custom("TrebuchetMS", size: 18))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color("AccentColor"))
-                                    .padding(.leading, 1)
-                                
-                            }.padding(.horizontal, 16)
-                                .padding(.vertical, 8)
-                                .background(Color("backgroundColor").opacity(0.3))
-                                .cornerRadius(20)
-                                .padding(.top, 10)
-                        }.sheet(isPresented: $isImagePickerDisplayed) {
-                            ImagePicker(sourceType: .photoLibrary, selectedImage: $image)
+                    Button(action: {
+                                    self.sourceType = .camera
+                                    self.isImagePickerDisplayed = true
+                                }, label:{
+                                    HStack{
+                                        Image(systemName: "camera")
+                                            .foregroundColor(.accentColor)
+                                            .font(.system(size:18))
+                                            .padding(.bottom, 2)
+                                        
+                                        Text("Take photo")
+                                            .font(.custom("TrebuchetMS", size: 18))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color("AccentColor"))
+                                            .padding(.leading, 5)
+                                        
+                                    }.padding(.horizontal, 20)
+                                        .padding(.vertical, 10)
+                                        .background(Color("backgroundColor").opacity(0.3))
+                                        .cornerRadius(20)
+                                        .padding(.top, 40)
+                                        .padding(.bottom, 3)
+                                })
+
+                                if image != nil {
+                                    PhotoViewerView(image: $image, chooseNewPhoto: {
+                                        isImagePickerDisplayed = true
+                                        sourceType = .photoLibrary // Ensure this is reset or managed correctly
+                                    })
+                                } else {
+                                    Button {
+                                        sourceType = .photoLibrary // Ensure this is set before showing the picker
+                                        isImagePickerDisplayed = true
+                                    } label: {
+                                        HStack{
+                                            Image(systemName: "square.and.arrow.up")
+                                                .foregroundColor(.accentColor)
+                                                .font(.system(size:17))
+                                                .padding(.bottom, 2)
+                                            
+                                            Text("Choose photo")
+                                                .font(.custom("TrebuchetMS", size: 18))
+                                                .fontWeight(.bold)
+                                                .foregroundColor(Color("AccentColor"))
+                                                .padding(.leading, 1)
+                                            
+                                        }.padding(.horizontal, 16)
+                                            .padding(.vertical, 8)
+                                            .background(Color("backgroundColor").opacity(0.3))
+                                            .cornerRadius(20)
+                                            .padding(.top, 10)
+                                    }
+                                }
+                            }.offset(y: 25)
+                        }
+                        .sheet(isPresented: $isImagePickerDisplayed) {
+                            ImagePicker(sourceType: self.sourceType, selectedImage: $image)
                                 .onDisappear {
                                     // Check if an image was selected and show PhotoViewer
                                     if image != nil {
@@ -129,23 +140,19 @@ struct HomePage: View {
                                     }
                                 }
                         }
+                        .fullScreenCover(isPresented: $showPhotoViewer) {
+                            if let image = image {
+                                PhotoViewerView(image: $image, chooseNewPhoto: {
+                                    // Reset the image to allow reselection
+                                    self.image = nil
+                                    self.isImagePickerDisplayed = true
+                                    self.showPhotoViewer = false
+                                })
+                            }
+                        }
                     }
-                }.offset(y: 25)
-                
-                
-            }.fullScreenCover(isPresented: $showPhotoViewer) {
-                if let image = image {
-                    PhotoViewerView(image: $image, chooseNewPhoto: {
-                        // Reset the image to allow reselection
-                        self.image = nil
-                        self.isImagePickerDisplayed = true
-                        self.showPhotoViewer = false
-                    })
                 }
             }
-        }
-    }
-}
 
 struct HomePage_Previews: PreviewProvider {
     static var previews: some View {
