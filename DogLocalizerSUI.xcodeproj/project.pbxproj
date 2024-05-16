@@ -15,7 +15,6 @@
 		371F1B9F2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 371F1B9E2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift */; };
 		372E126D2BDC0CB700B6CFB8 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E126C2BDC0CB700B6CFB8 /* NavigationManager.swift */; };
 		372E126F2BDC328E00B6CFB8 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372E126E2BDC328E00B6CFB8 /* RootView.swift */; };
-		372E12712BDC44FA00B6CFB8 /* finalModel.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 372E12702BDC44FA00B6CFB8 /* finalModel.mlpackage */; };
 		373B809B2BD5A48E0020137A /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373B809A2BD5A48D0020137A /* SideMenu.swift */; };
 		373B809D2BD6430C0020137A /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 373B809C2BD6430C0020137A /* About.swift */; };
 		3742D7AA2BD53BFA00CD7F31 /* StarToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3742D7A92BD53BFA00CD7F31 /* StarToggleButton.swift */; };
@@ -25,6 +24,7 @@
 		377144282BDC489D00CF71C0 /* ModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 377144272BDC489D00CF71C0 /* ModelManager.swift */; };
 		379CEA4E2BDBE9F500285DC0 /* PhotoViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CEA4D2BDBE9F500285DC0 /* PhotoViewerView.swift */; };
 		379CEA502BDBEBBD00285DC0 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379CEA4F2BDBEBBD00285DC0 /* ImagePicker.swift */; };
+		37D23EBC2BF60D14004938DE /* XceptionModel_3.mlpackage in Sources */ = {isa = PBXBuildFile; fileRef = 37D23EBB2BF60D14004938DE /* XceptionModel_3.mlpackage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +56,6 @@
 		371F1B9E2BBAA40700930363 /* DogLocalizerSUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogLocalizerSUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		372E126C2BDC0CB700B6CFB8 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		372E126E2BDC328E00B6CFB8 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		372E12702BDC44FA00B6CFB8 /* finalModel.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = finalModel.mlpackage; sourceTree = "<group>"; };
 		373B809A2BD5A48D0020137A /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
 		373B809C2BD6430C0020137A /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		3742D7A92BD53BFA00CD7F31 /* StarToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarToggleButton.swift; sourceTree = "<group>"; };
@@ -67,6 +66,7 @@
 		3796BAC62BEF8825000FEE99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		379CEA4D2BDBE9F500285DC0 /* PhotoViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerView.swift; sourceTree = "<group>"; };
 		379CEA4F2BDBEBBD00285DC0 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		37D23EBB2BF60D14004938DE /* XceptionModel_3.mlpackage */ = {isa = PBXFileReference; lastKnownFileType = folder.mlpackage; path = XceptionModel_3.mlpackage; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +130,8 @@
 				3742D7B72BD57BE200CD7F31 /* PhotoSwipeView.swift */,
 				3742D7AB2BD53E9400CD7F31 /* StarRatingView.swift */,
 				3742D7A92BD53BFA00CD7F31 /* StarToggleButton.swift */,
-				372E12702BDC44FA00B6CFB8 /* finalModel.mlpackage */,
 				371F1B852BBAA40500930363 /* Assets.xcassets */,
+				37D23EBB2BF60D14004938DE /* XceptionModel_3.mlpackage */,
 				371F1B872BBAA40500930363 /* Preview Content */,
 			);
 			path = DogLocalizerSUI;
@@ -292,6 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D23EBC2BF60D14004938DE /* XceptionModel_3.mlpackage in Sources */,
 				3742D7AE2BD540B900CD7F31 /* HomePage.swift in Sources */,
 				373B809D2BD6430C0020137A /* About.swift in Sources */,
 				3742D7AC2BD53E9400CD7F31 /* StarRatingView.swift in Sources */,
@@ -303,7 +304,6 @@
 				377144282BDC489D00CF71C0 /* ModelManager.swift in Sources */,
 				379CEA4E2BDBE9F500285DC0 /* PhotoViewerView.swift in Sources */,
 				372E126D2BDC0CB700B6CFB8 /* NavigationManager.swift in Sources */,
-				372E12712BDC44FA00B6CFB8 /* finalModel.mlpackage in Sources */,
 				372E126F2BDC328E00B6CFB8 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

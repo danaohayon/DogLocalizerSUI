@@ -52,18 +52,11 @@ struct PhotoViewerView: View {
                         .padding(.vertical)
                         .overlay(RectangleOverlay(boundingBox: boundingBox))
                 }
-                if let image = processedImage {
-                    Image(uiImage: image)
-                        .resizable()
-                        .scaledToFit()
-                        .padding()
-                }
                
                     Button {
                         if let image = self.image {
                             let manager = ModelManager()
                             if let processed = manager?.preprocessImage(image) {
-                                self.processedImage = processed // Now you can visually inspect the processed image
                                 manager?.classifyImage(processed) { label, box in
                                     self.classificationLabel = label
                                     self.boundingBox = box
@@ -86,6 +79,9 @@ struct PhotoViewerView: View {
                     }
                     
                     Text(classificationLabel)
+                    .font(.custom("TrebuchetMS", size: 12))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("AccentColor"))
                     
                     Button {
                         chooseNewPhoto()
