@@ -49,10 +49,15 @@ struct PhotoViewerView: View {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFit()
-                        .padding(.vertical)
+                        .padding()
                         .overlay(RectangleOverlay(boundingBox: boundingBox))
                 }
-               
+                Text(classificationLabel)
+                .font(.custom("TrebuchetMS", size: 20))
+                .fontWeight(.bold)
+                .foregroundColor(Color("AccentColor"))
+                .padding(.horizontal)
+                
                     Button {
                         if let image = self.image {
                             let manager = ModelManager()
@@ -78,10 +83,7 @@ struct PhotoViewerView: View {
                             .padding(.top, 10)
                     }
                     
-                    Text(classificationLabel)
-                    .font(.custom("TrebuchetMS", size: 12))
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("AccentColor"))
+                    
                     
                     Button {
                         chooseNewPhoto()
@@ -106,7 +108,6 @@ struct PhotoViewerView: View {
                     }
                 }
             }
-            .padding()
         }
     }
 

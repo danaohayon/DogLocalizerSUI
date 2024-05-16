@@ -76,7 +76,6 @@ class ModelManager {
 
         for i in 0..<120 {
             let confidence = classPredictionArray[i].floatValue
-            print("Class: \(breedNames[i]), Confidence: \(confidence)")
             if confidence > maxConfidence {
                 maxConfidence = confidence
                 predictedClassIndex = i
